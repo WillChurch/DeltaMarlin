@@ -70,7 +70,7 @@
 #define TEMP_SENSOR_0 1 //5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
-#define TEMP_SENSOR_BED 1//1
+#define TEMP_SENSOR_BED 1  //-1 // 1//1
 
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
 //#define TEMP_SENSOR_1_AS_REDUNDANT
@@ -122,9 +122,9 @@
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 // Ultimaker
-    #define  DEFAULT_Kp 22.2
-    #define  DEFAULT_Ki 1.08
-    #define  DEFAULT_Kd 114
+    #define  DEFAULT_Kp 13.16//34.98//35.61//22.2
+    #define  DEFAULT_Ki 0.41//3.73//4.06//1.08
+    #define  DEFAULT_Kd 106.05//81.97//78.18//114
 
 // MakerGear
 //    #define  DEFAULT_Kp 7.0
@@ -160,7 +160,7 @@
 #ifdef PIDTEMPBED
 //120v 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-    #define  DEFAULT_bedKp 10.00
+    #define  DEFAULT_bedKp 20.0 // 10.00
     #define  DEFAULT_bedKi .023
     #define  DEFAULT_bedKd 305.4
 
@@ -196,31 +196,31 @@
 #define DELTA_SEGMENTS_PER_SECOND 50
 
 #define DELTA_E         50.8//172.0//131.636 // End effector length
-#define DELTA_F         158.3//152.4//81.4//190.526 // Base length
-#define DELTA_RE        163.5//114.5//270.000 // Carbon rod length
-#define DELTA_RF         50.8//77.0//86.000 // Servo horn length
+#define DELTA_F         160.0//158.3//152.4//81.4//190.526 // Base length
+#define DELTA_RE        215.0//163.5//114.5//270.000 // Carbon rod length
+#define DELTA_RF         85.0 // 75.0//50.8//77.0//86.000 // Servo horn length
 //#define DELTA_Z_OFFSET  293.000 // Distance from delta 8mm rod/pulley to table/bed.
 
 //NOTE: For OpenPnP, set the zero to be about 25mm above the bed...
-#define DELTA_Z_OFFSET  203.2//???  268.000 // Distance from delta 8mm rod/pulley to table/bed.
+#define DELTA_Z_OFFSET  323.43-37.49// 203.2//???  268.000 // Distance from delta 8mm rod/pulley to table/bed.
 
 
-#define DELTA_EE_OFFS    18.35+11.54-23.88-0.5+1.5+0.5+.25//15.0  // Ball joint plane to bottom of end effector surface.  
+#define DELTA_EE_OFFS   0.00-29.5-9.47-2.40-4.00+1.50-24.15-11.57-3.58-0.25-1.60+32.00-0.60-0.5-0.98+1.00-0.55 // Ball joint plane to bottom of end effector surface.  
 //Adding to this number increases the maximum build height 
 
-//#define TOOL_OFFSET       0.000 // No offset
+#define TOOL_OFFSET       0.000 // No offset
 //#define TOOL_OFFSET      40.000 // Distance between end effector ball joint plane and tip of tool (Z probe)
-#define TOOL_OFFSET      0.00 // Distance between end effector ball joint plane and tip of tool (PnP)
+//#define TOOL_OFFSET      0.00 // Distance between end effector ball joint plane and tip of tool (PnP)
 #define Z_CALC_OFFSET  ((DELTA_Z_OFFSET - TOOL_OFFSET - DELTA_EE_OFFS) * -1)
 
-#define Z_HOME_ANGLE    -19.09//-26.0  -67.200 // This is the angle where the arms hit the endstop sensor
-#define Z_HOME_OFFS    (((DELTA_Z_OFFSET - TOOL_OFFSET - DELTA_EE_OFFS) - 126.512)) //- 0.5)
+#define Z_HOME_ANGLE     -38.63 // -37.50 //-10.96  This is the angle where the arms hit the endstop sensor
+#define Z_HOME_OFFS    (((DELTA_Z_OFFSET - TOOL_OFFSET - DELTA_EE_OFFS) -138.34)) // -139.128))//-173.27))// -152.461)) //-172.377))
                                 // This is calculated from the above angle, after applying forward 
                                 // kinematics, and adding the Z calc offset to it.
 
 
 // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-#define DELTA_PRINTABLE_RADIUS 50//150.0
+#define DELTA_PRINTABLE_RADIUS 150.0//150.0
 
 
 
@@ -391,7 +391,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;//true; // set to true to invert the 
 #define XYZ_FULL_STEPS_PER_ROTATION 400//200.0
 #define XYZ_MICROSTEPS 16.0
 #define SMALL_PULLEY_TEETH 16.0
-#define BIG_PULLEY_TEETH 16.0
+#define BIG_PULLEY_TEETH 80//16.0
 #define PULLEY_REDUCTION BIG_PULLEY_TEETH/SMALL_PULLEY_TEETH
 #define XYZ_STEPS (XYZ_FULL_STEPS_PER_ROTATION*XYZ_MICROSTEPS*PULLEY_REDUCTION)/360.0
 
