@@ -205,7 +205,7 @@
 #define DELTA_Z_OFFSET  323.43-37.49// 203.2//???  268.000 // Distance from delta 8mm rod/pulley to table/bed.
 
 
-#define DELTA_EE_OFFS   0.00-29.5-9.47-2.40-4.00+1.50-24.15-11.57-3.58-0.25-1.60+32.00-0.60-0.5-0.98+1.00-0.55 // Ball joint plane to bottom of end effector surface.  
+#define DELTA_EE_OFFS   0.00-29.5-9.47+1.50-24.15-11.57-3.58-0.25+32.00-0.60-0.5-0.98-0.5 // Ball joint plane to bottom of end effector surface.  
 //Adding to this number increases the maximum build height 
 
 #define TOOL_OFFSET       0.000 // No offset
