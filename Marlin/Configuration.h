@@ -397,7 +397,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false;//true; // set to true to invert the 
 
 //For Delta configuration: Units are degrees! That is, steps per degree
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {80, 80, 80, 100}
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 95}//10}//8.8888}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 190}//10}//8.8888}
 #define DEFAULT_MAX_FEEDRATE          {1000,1000,1000,1000}//{250,250,250,500}//{500, 500, 500, 1000}//all divided by ten by me    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {10000,10000,10000,10000}//{100,100,100,300}//{300,300,300,1000} //all divided by ten by me     // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
